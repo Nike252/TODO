@@ -382,22 +382,20 @@ const Dashboard = () => {
           : 'bg-white/80 border-gray-200'
       }`}>
         {[
-          { icon: <FiHome className="text-xl" />, label: 'Home' },
-          { icon: <FiCalendar className="text-xl" />, label: 'Calendar' },
+          { icon: <FiHome className="text-xl" />, label: 'Home', path: '/dashboard' },
+          { icon: <FiCalendar className="text-xl" />, label: 'calender', path: '/calender' },
           { icon: <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#92ada4] to-[#4a7b9d] flex items-center justify-center -mt-6">
                   <FiPlus className="text-white text-xl" />
-                </div>, label: 'Add' },
-          { icon: <FiClock className="text-xl" />, label: 'Focus' },
-          { icon: <FiUser className="text-xl" />, label: 'Profile' }
+                </div>, label: 'Add', path: '/add' },
+          { icon: <FiClock className="text-xl" />, label: 'Focus', path: '/focus' },
+          { icon: <FiUser className="text-xl" />, label: 'Profile', path: '/profile' }
         ].map((item, index) => (
           <button 
             key={index} 
             className={`flex flex-col items-center justify-center ${
               index === 2 ? 'w-16' : 'w-12'
             }`}
-            onClick={() => {
-              if (item.label === 'Profile') navigate('/profile');
-            }}
+            onClick={() => navigate(item.path)}
           >
             {item.icon}
             <span className="text-xs mt-1">{item.label}</span>

@@ -301,7 +301,7 @@ const Profile = () => {
       }`}>
         {[
           { icon: <FiHome className="text-xl" />, label: 'Home', path: '/dashboard', active: false },
-          { icon: <FiCalendar className="text-xl" />, label: 'Calendar', path: '/calendar', active: false },
+          { icon: <FiCalendar className="text-xl" />, label: 'calender', path: '/calender', active: false },
           { icon: <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#92ada4] to-[#4a7b9d] flex items-center justify-center -mt-6">
                   <FiPlus className="text-white text-xl" />
                 </div>, label: 'Add', path: '/add', active: false },
