@@ -1,6 +1,7 @@
 // src/Dashboard.jsx
 import React, { useState, useEffect } from 'react';
 import { FiPlus, FiSun, FiMoon, FiCheckCircle, FiHome, FiCalendar, FiClock, FiUser, FiBell, FiX } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
   const [darkMode, setDarkMode] = useState(() => {
@@ -18,6 +19,8 @@ const Dashboard = () => {
     { id: 3, text: 'Alex Johnson commented on your task', time: '3 hours ago', read: false },
   ]);
 
+  const navigate = useNavigate();
+
   // Initialize tasks
   useEffect(() => {
     setTasks([
@@ -29,6 +32,10 @@ const Dashboard = () => {
       { id: 6, title: 'Morning meditation session', completed: false, category: 'Wellness', priority: 'medium' },
     ]);
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', darkMode);
+  }, [darkMode]);
 
   const toggleTaskCompletion = (id) => {
     setTasks(tasks.map(task => 
@@ -388,6 +395,9 @@ const Dashboard = () => {
             className={`flex flex-col items-center justify-center ${
               index === 2 ? 'w-16' : 'w-12'
             }`}
+            onClick={() => {
+              if (item.label === 'Profile') navigate('/profile');
+            }}
           >
             {item.icon}
             <span className="text-xs mt-1">{item.label}</span>
