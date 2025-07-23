@@ -3,6 +3,8 @@ import LoginPage from './Login';
 import Dashboard from './Dashboard';
 import Profile from './Profile';
 import Calender from './Calender';
+import Focus from './Focus';
+import Add from './Add';
 import './App.css';
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/calender" element={<Calender />} />
+        <Route path="/focus" element={<Focus />} />
+        <Route path="/add" element={<Add />} />
       </Routes>
     </Router>
   );
